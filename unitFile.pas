@@ -2,4 +2,5 @@
 Program unitFile;
 Begin
 
-End.
+  Var perro : real;
+  End.
