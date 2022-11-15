@@ -4,7 +4,7 @@ Unit ARCHIVOS;
 Interface
 
 Const 
-  RUTA = 'C: \Users\Usuario\Desktop\cadastre-simulation\files';
+  RUTA = 'C:\Users\Usuario\Desktop\cadastre-simulation\files';
 
 Type 
   T_DATO = Record
