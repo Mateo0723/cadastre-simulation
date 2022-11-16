@@ -1,7 +1,5 @@
 
-Program catastro;
-
-Uses crt;
+Program pruebaEscrituraFile;
 
 Type 
   T_dato_propietarios = Record
@@ -29,16 +27,30 @@ Type
   T_arch_propietarios = file Of T_dato_propietarios;
   T_arch_terrenos = file Of T_dato_terrenos;
 
-Procedure AltaPropietarios(Var T_arch_propietarios)
+
+Const 
+  Ruta_propietarios = 'files\archivoPropietarios.dat';
+  Ruta_terrenos = 'files\archivoTerrenos.dat';
+
+Var 
+  ARCH : T_archivo;
+  dato : T_dato;
+  i : byte;
+  nombre : string[20];
+  dni : string[8];
+
 Begin
-
-  Var aux : T_dato_propietarios;
-    Writeln('Ingrese clave');
-    Read
-  End;
-
-  Begin
-
-
-
-  End.
+  Assign(ARCH,Ruta);
+  Rewrite(ARCH);
+  for i := 0 to 3 do
+    begin
+      Writeln('Ingrese nombre: ');
+      Readln(nombre);
+      Writeln('Ingrese dni: ');
+      Readln(dni);
+      dato.nombre := nombre;
+      dato.dni := dni;
+      seek(ARCH,i);
+      write(ARCH,dato);
+    end;
+End.
